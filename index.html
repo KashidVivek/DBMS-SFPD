@@ -1,0 +1,123 @@
+<!doctype html>
+<title>Example</title>
+<style>
+* {
+  box-sizing: border-box; 
+}
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  margin: 0;
+}
+#main {
+  display: flex;
+  flex: 1;
+}
+#main > article {
+  flex: 1;
+}
+#main > Nav
+{
+  flex: 0 0 10vw;
+  background: beige;
+}
+#main > nav {
+  order: -1;
+}
+header  {
+  background: rgb(5, 16, 87);
+  height: 20vh;
+  font-size: 40px;
+  text-transform: capitalize;
+  color: white;
+  font-family: "Verdana";
+}
+
+footer{
+  background: rgb(5, 16, 87);
+  height: 15vh;
+  font-size: 15px;
+  text-transform: capitalize;
+  color: white;
+  font-family: "Verdana";
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111111;
+}
+
+.imgheader{
+  float: left;
+  width: 1%;
+  height:1%;
+}
+
+article{
+  font-size: 18px;
+  font-family: "Verdana";
+}
+header, footer, article, nav {
+  padding: 1em;
+}
+.center{
+  width: 100%;
+  height: 50%;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+</style>
+<body>
+  <div>
+  <header>
+    San Francisco Police Department
+  </header>
+</div>
+<ul>
+  <li><a href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="login.html">Login</a></li>
+  <li><a href="#register">Register</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
+  <div id="main">
+    <article>The San Francisco Police Department (SFPD) is the city police department of the City and County of San Francisco, California. The department's motto is the same as that of the city and county: Oro en paz, fierro en guerra, Spanish for Gold in peace, iron in war.
+
+    The SFPD is distinct from the San Francisco Sheriff's Department, which is another county law enforcement agency within San Francisco. The SFPD (along with the San Francisco Fire Department and the San Francisco Sheriff's Department) serves an estimated population of 1.2 million, including the daytime-commuter population and the thousands of other tourists and visitors, in the second most densely populated large city in North America. In 2000, it was the 11th largest police department in the United States.</article>
+    <!--<nav>
+      <ul>
+        <li>Home</li>
+        <li>Login</li>
+        <li>Register</li>
+      </ul>
+    </nav> -->
+  </div>
+  <div>
+    <img src="images/landing.jpg" class="center">
+  </div>
+  <footer>Contact Us<br>
+          Call 9-1-1 in case of life-threatening emergencies or crimes in progress
+          (Police, Fire or Medical Emergencies within San Francisco)
+  </footer>
+</body>
