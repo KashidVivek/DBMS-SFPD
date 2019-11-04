@@ -42,7 +42,7 @@ CREATE TABLE INCIDENTS (
     Incident_ID INT        NOT NULL,
 	Dept_ID     INT        NOT NULL,
 	Incident_Date DATE,
-	Incident_Time TIME,
+	Incident_Time TIMESTAMP,
 	Incident_Year INT,
     PRIMARY KEY (Incident_ID),
     FOREIGN KEY(Dept_ID) REFERENCES POLICE_DEPARTMENT(Dept_ID)
