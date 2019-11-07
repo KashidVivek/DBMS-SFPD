@@ -70,10 +70,10 @@ CREATE TABLE REPORT (
 
 -- table Location
 CREATE TABLE LOCATION (
-    Incident_ID INT             NOT NULL,
-	Longitude REAL              NOT NULL,
-	Latitude  REAL              NOT NULL,
-	Intersection VARCHAR(255)   NOT NULL,
+    Incident_ID INT           NOT NULL,
+	Longitude REAL            ,
+	Latitude  REAL            ,
+	Intersection VARCHAR(255) ,
     FOREIGN KEY (Incident_ID) REFERENCES INCIDENTS(Incident_ID)
 );
 
