@@ -38,28 +38,35 @@ for i in range(nRow):
 #   PRIMARY KEY (Incident_ID),
 #   FOREIGN KEY(Dept_ID) REFERENCES POLICE_DEPARTMENT(Dept_ID)
 # );
-    line_incident = r"INSERT INTO INCIDENTS VALUES('{0}','{1}',TO_DATE('{2}','YYYY-MM-DD'),TO_TIMESTAMP('{3}', 'YYYY-MM-DD HH24:MI:SS.FF'),'{4}');{5}"
-    line_incident = line_incident.format(i, 0, df['Incident Date'][i], df['Incident Datetime'][i], df['Incident Year'][i],"\n")
+    line_incident = r"INSERT INTO INCIDENTS VALUES('{}','{}',TO_DATE('{}','YYYY-MM-DD'),TO_TIMESTAMP('{}', 'YYYY-MM-DD HH24:MI:SS.FF'),'{}');{}"
+    line_incident = line_incident.format(i, 0, df['Incident Date'][i], df['Incident Datetime'][i], df['Incident Year'][i], "\n")
     sql_incident.append(line_incident)
 
 # -- table Location
 # CREATE TABLE LOCATION (
 #     Incident_ID INT             NOT NULL,
-# 	Longitude REAL              NOT NULL,
-# 	Latitude  REAL              NOT NULL,
-# 	Intersection VARCHAR(255)   NOT NULL,
+# 	Longitude REAL              ,
+# 	Latitude  REAL              ,
+# 	Intersection VARCHAR(255)   ,
 #     FOREIGN KEY (Incident_ID) REFERENCES INCIDENTS(Incident_ID)
 # );
-    line_location = r"INSERT INTO LOCATION VALUES('{}','{}','{}','{}');"
-    Longitude = 0
-    Latitude = 0
-    Intersection = 'Intersection'
-    line_location = line_location.format(i, Longitude, Latitude, Intersection)
+    line_location = r"INSERT INTO LOCATION VALUES('{}','{}','{}','{}');{}"
+    t = df['Latitude'][i]
+    if t != t:
+        t = 'null'
+    Latitude = t
+    t = df['Longitude'][i]
+    if t != t:
+        t = 'null'
+    Longitude = t
+    t = df['Intersection'][i]
+    if t != t:
+        t = 'null'
+    Intersection = t
+    line_location = line_location.format(i, Longitude, Latitude, Intersection, "\n")
     sql_location.append(line_location)
 
 write_file("ins_incident.sql", sql_incident)
 write_file("ins_location.sql", sql_location)
-
-
 sql_all = sql_incident + sql_location
-write_file("ins_all.sql", sql_location)
+write_file("ins_all.sql", sql_all)
