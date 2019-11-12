@@ -1,0 +1,11 @@
+INSERT INTO POLICE_DEPARTMENT VALUES ('1','Central','766 Vallejo St. San Francisco, CA 94133','1','911','test');
+INSERT INTO POLICE_DEPARTMENT VALUES ('2','Mission','630 Valencia St. San Francisco, CA 94110','1','911','test');
+INSERT INTO POLICE_DEPARTMENT VALUES ('3','Northern','1125 Fillmore St. San Francisco, CA 94115','1','911','test');
+INSERT INTO POLICE_DEPARTMENT VALUES ('4','Southern','Public Safety Building: 1251 3rd St. San Francisco, CA 94103','1','911','test');
+INSERT INTO POLICE_DEPARTMENT VALUES ('5','Tenderloin','301 Eddy St. San Francisco, CA 94102','1','911','test');
+INSERT INTO POLICE_DEPARTMENT VALUES ('6','Bayview','201 Williams Ave. San Francisco, CA 94124','1','911','test');
+INSERT INTO POLICE_DEPARTMENT VALUES ('7','Ingleside','1 Sgt. John V. Young Ln. San Francisco, CA 94112-2408','1','911','test');
+INSERT INTO POLICE_DEPARTMENT VALUES ('8','Park','1899 Waller Street San Francisco, CA 94117','1','911','test');
+INSERT INTO POLICE_DEPARTMENT VALUES ('9','Richmond','461 6th Ave San Francisco, CA 94118','1','911','test');
+INSERT INTO POLICE_DEPARTMENT VALUES ('10','Taraval','2345 24th Ave. San Francisco, CA 94116','1','911','test');
+INSERT INTO POLICE_DEPARTMENT VALUES ('11','Out of SF','Out of SF','1','911','test');
