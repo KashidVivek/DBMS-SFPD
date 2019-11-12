@@ -39,8 +39,8 @@ CREATE TABLE POLICE_OFFICIAL (
 
 -- table Incidents
 CREATE TABLE INCIDENTS (
-    Incident_ID INT        NOT NULL,
-	Dept_ID     INT        NOT NULL,
+    Incident_ID INT             NOT NULL,
+	Dept_ID     INT             NOT NULL,
 	Incident_Date DATE,
 	Incident_Time TIMESTAMP,
 	Incident_Year INT,
@@ -60,12 +60,14 @@ CREATE TABLE COMPLAINANT (
 CREATE TABLE REPORT (
     Report_ID INT                     NOT NULL,
 	Dept_ID INT                       NOT NULL,
-	Incident_Category VARCHAR(255)    NOT NULL,
-	Incident_Subcategory VARCHAR(255) NOT NULL,
-	Resolution VARCHAR(255)           NOT NULL,
-	Report_Type VARCHAR(255)          NOT NULL,
+	Incident_ID INT                   NOT NULL
+	Incident_Category VARCHAR(255)    ,
+	Incident_Subcategory VARCHAR(255) ,
+	Resolution VARCHAR(255)           ,
+	Report_Type VARCHAR(255)          ,
 	PRIMARY KEY (Report_ID),
 	FOREIGN KEY(Dept_ID) REFERENCES POLICE_DEPARTMENT(Dept_ID)
+	FOREIGN KEY(Incident_ID) REFERENCES INCIDENTS(Incident_ID)
 );
 
 -- table Location
