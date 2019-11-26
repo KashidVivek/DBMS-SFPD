@@ -1,0 +1,20 @@
+I have following tables
+INCIDENT
+INCIDENT_ADDRESS
+REPORTS
+MAIN
+
+5 most dangerous places in SF
+select analysis_neighborhood, round(((rank*100)/total),2) as risk_factor 
+from (select analysis_neighborhood, rownum as rank, total 
+    from (select analysis_neighborhood, A as W_F 
+        from (select analysis_neighborhood, count(*) as A 
+            from incident_address 
+            group by analysis_neighborhood)  order by W_F) 
+            cross join (select count(distinct analysis_neighborhood) as total 
+                from incident_address)) 
+                where analysis_neighborhood in (select analysis_neighborhood 
+                    from (select analysis_neighborhood,count(*) 
+                        from (select * from incident_address 
+                        where (latitude  between 37.7079882591846 and 37.8299907546886) and (longitude between -122.511294926245 and -122.363742766952)) 
+                            group by analysis_neighborhood order by count(*) desc) where rownum<6);
