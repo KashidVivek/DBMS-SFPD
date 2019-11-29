@@ -73,7 +73,24 @@ ORDER BY
     cnt ASC;
     
 --6.	Determine the time and a particular area where there is maximum probability of crime scene.
--- not doing this, no time
+-- not doing this, no time, we could change it to date?
+
+SELECT
+    COUNT(*) AS cnt,
+    a.incident_datetime as incident_date, 
+    c.analysis_neighborhood AS an
+FROM
+    main               a,
+    incident           b,
+    incident_address   c
+WHERE
+    a.incident_code = b.incident_code
+    AND a.cnn = c.cnn
+    AND c.analysis_neighborhood <> 'null'
+GROUP BY
+    c.analysis_neighborhood, a.incident_datetime
+ORDER BY
+    cnt DESC;
 
 --7.	Find if reporting the crime online as soon as crime is committed can help resolve the issues faster.
 -- RC change this to a trend
@@ -97,8 +114,7 @@ ORDER BY
     cnt DESC;
 
 
---9.	Find the type of crime which is hardest to resolve.
-   
+--9.	Find the type of crime which is hardest to resolve. 
 SELECT
     COUNT(*) as cnt, 
     c.incident_category,
@@ -121,3 +137,4 @@ Order BY
 -- will not do because we don't have time now
 
 --11.	Determine the most prevalent crime committed in a certain region.
+-- RC this is actually the same as #8 
