@@ -78,10 +78,10 @@ WSGI_APPLICATION = 'Crime_Visualisation.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.oracle',
-        'NAME': 'xe',
-        'USER': 'vkashid',
-        'PASSWORD': 'Vlk969614',
-        'HOST': 'localhost',
+        'NAME': 'orcl',
+        'USER': 'milind',
+        'PASSWORD': 'Thollarkuzhi',
+        'HOST': 'oracle.cise.ufl.edu',
         'PORT': '1521',
     }
 }
