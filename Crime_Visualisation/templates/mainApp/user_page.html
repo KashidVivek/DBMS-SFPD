@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.form-style-1 {
+  margin:10px auto;
+  max-width: 400px;
+  padding: 20px 12px 10px 20px;
+  font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+.form-style-1 li {
+  padding: 0;
+  display: block;
+  list-style: none;
+  margin: 10px 0 0 0;
+}
+.form-style-1 label{
+  margin:0 0 3px 0;
+  padding:0px;
+  display:block;
+  font-weight: bold;
+}
+.form-style-1 input[type=text],
+.form-style-1 input[type=date],
+.form-style-1 input[type=datetime],
+.form-style-1 input[type=number],
+.form-style-1 input[type=search],
+.form-style-1 input[type=time],
+.form-style-1 input[type=url],
+.form-style-1 input[type=email],
+textarea,
+select{
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  border:1px solid #BEBEBE;
+  padding: 7px;
+  margin:0px;
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+}
+.form-style-1 input[type=text]:focus,
+.form-style-1 input[type=date]:focus,
+.form-style-1 input[type=datetime]:focus,
+.form-style-1 input[type=number]:focus,
+.form-style-1 input[type=search]:focus,
+.form-style-1 input[type=time]:focus,
+.form-style-1 input[type=url]:focus,
+.form-style-1 input[type=email]:focus,
+.form-style-1 textarea:focus,
+.form-style-1 select:focus{
+  -moz-box-shadow: 0 0 8px #88D5E9;
+  -webkit-box-shadow: 0 0 8px #88D5E9;
+  box-shadow: 0 0 8px #88D5E9;
+  border: 1px solid #88D5E9;
+}
+.form-style-1 .field-divided{
+  width: 49%;
+}
+.form-style-1 .field-long{
+  width: 100%;
+}
+.form-style-1 .field-select{
+  width: 100%;
+}
+.form-style-1 .field-textarea{
+  height: 100px;
+}
+.form-style-1 input[type=submit], .form-style-1 input[type=button]{
+  background: #4B99AD;
+  padding: 8px 15px 8px 15px;
+  border: none;
+  color: #fff;
+}
+.form-style-1 input[type=submit]:hover, .form-style-1 input[type=button]:hover{
+  background: #4691A4;
+  box-shadow:none;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+}
+.form-style-1 .required{
+  color:red;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.topnav a.active {
+  background-color: rgb(5, 16, 87);
+  color: white;
+}
+.topnav-right {
+  float: right;
+}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="active" href="#">File Report</a>
+  <a href="#">View Reports</a>
+  <div class="topnav-right">
+    <a href="#">Update Profile</a>
+    <a href="#">Logout</a>
+  </div>
+</div>
+<h2> <center>File Online Report to SF Police Deptartment </center> <h2>
+<form>
+<ul class="form-style-1">
+    <li>
+        <label>Incident Code<span class="required">*</span></label>
+        <select name="field4" class="field-select">
+        <option value="04134">Assault (04134)</option>
+        <option value="01001">Homicide (01001)</option>
+        <option value="02010">Rape (02010)</option>
+        <option value="03011">Robbery (03011)</option>
+        </select>
+    </li>
+    <li>
+      <label for="start">Incident date:<span class="required">*</span></label>
+
+      <input type="date" id="start" name="trip-start"
+       value="2018-07-22"
+       min="2018-01-01" max="2018-12-31">
+     </li>
+    <li>
+      <label for="appt">Incident Time<span class="required">*</span></label>
+      <input type="time" id="appt" name="appt"
+       min="09:00" max="18:00" required>
+    </li>
+    <li><label>Incident Day <span class="required">*</span></label><input type="text" name="field1" class="field-divided" placeholder="Type Day.." />
+    </li>
+    <li>
+    <li><label>Full Name <span class="required">*</span></label><input type="text" name="field1" class="field-divided" placeholder="First" /> <input type="text" name="field2" class="field-divided" placeholder="Last" /></li>
+    <li>
+        <label>Email <span class="required">*</span></label>
+        <input type="email" name="field3" class="field-long" />
+    </li>
+
+    <li>
+        <label>Description: <span></span></label>
+        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+    </li>
+    <li>
+        <input type="submit" value="Submit" />
+    </li>
+</ul>
+</form>
+</body>
+</html>

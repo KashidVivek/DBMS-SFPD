@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'Crime_Visualisation.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.oracle',
+        'NAME': 'xe',
+        'USER': 'vkashid',
+        'PASSWORD': 'Vlk969614',
+        'HOST': 'localhost',
+        'PORT': '1521',
     }
 }
 
