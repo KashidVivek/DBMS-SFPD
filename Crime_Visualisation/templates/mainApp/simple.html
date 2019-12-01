@@ -46,66 +46,66 @@ body {
 </div>
 
 <h1> 1.	Determine the day of week when most crime happen.</h1>
-{% if row_id%}
+{% if r1%}
   <ol>
-    {%for id in row_id%}
-      <l1>{{id.0}}: {{id.1}}</l1><br/>
+    {%for t in r1%}
+      <l1>{{t.0}}: {{t.1}}</l1><br/>
     {%endfor%}
   </ol>
 {%endif%}
 
 <h1> 2.	Find the most committed crime.</h1>
-{% if row_id%}
+{% if r2%}
   <ol>
-    {%for id in row_id%}
-      <l1>{{id.0}}: {{id.1}}</l1><br/>
+    {%for t in r2%}
+      <l1>{{t.0}} : {{t.1}} : {{t.2}} </l1><br/>
     {%endfor%}
   </ol>
 {%endif%}
 
 <h1> 3.	Find a particular area of city where most of the crime happen.</h1>
-{% if row_id%}
+{% if r3%}
   <ol>
-    {%for id in row_id%}
-      <l1>{{id.0}}: {{id.1}}</l1><br/>
+    {%for t in r3%}
+      <l1>{{t.0}}: {{t.1}}</l1><br/>
     {%endfor%}
   </ol>
 {%endif%}
 
 
 <h1> 4.	Determine the number of cases resolved in San Francisco.</h1>
-{% if row_id%}
+{% if r4%}
   <ol>
-    {%for id in row_id%}
-      <l1>{{id.0}}: {{id.1}}</l1><br/>
+    {%for t in r4%}
+      <l1>{{t.0}}: {{t.1}}</l1><br/>
     {%endfor%}
   </ol>
 {%endif%}
 
 <h1> 5.	Determine the safest area of the city.</h1>
-{% if row_id%}
+{% if r5%}
   <ol>
-    {%for id in row_id%}
-      <l1>{{id.0}}: {{id.1}}</l1><br/>
+    {%for t in r5%}
+      <l1>{{t.0}}: {{t.1}}</l1><br/>
     {%endfor%}
   </ol>
 {%endif%}
 
 <h1> 8.	Find the most committed crime in every district of San Francisco.</h1>
-{% if row_id%}
+{% if r8%}
   <ol>
-    {%for id in row_id%}
-      <l1>{{id.0}}: {{id.1}}</l1><br/>
+    {%for t in r8%}
+      <l1>{{t.0}} : {{t.1}} : {{t.2}} </l1><br/>
     {%endfor%}
   </ol>
 {%endif%}
 
 
 <h1> 9.	Find the type of crime which is hardest to resolve. </h1>
-{% if row_id%}
+{% if r9%}
   <ol>
-    {%for id in row_id%}
-      <l1>{{id.0}}: {{id.1}}</l1><br/>
+    {%for t in r9%}
+      <l1>{{t.0}}: {{t.1}}</l1><br/>
     {%endfor%}
   </ol>
 {%endif%}
