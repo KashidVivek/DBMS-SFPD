@@ -22,4 +22,5 @@ urlpatterns = [
     path("", views.index),
     path('mainApp/', include('mainApp.urls')),
     path('admin/', admin.site.urls),
+    path('simple/', views.simple, name='simple')
 ]

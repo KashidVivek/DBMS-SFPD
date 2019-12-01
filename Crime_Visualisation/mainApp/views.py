@@ -13,8 +13,19 @@ def index(request):
 #     user_dict = {'users': user_list}
 #     return render(request, 'mainApp/user.html', context=user_dict)
 def my_custom_sql():
+    sql_str = """
+    SELECT
+        COUNT(*) AS cnt,
+        incident_day_of_week
+    FROM
+        main
+    GROUP BY
+        incident_day_of_week
+    ORDER BY
+        cnt DESC"""
+
     with connection.cursor() as cursor:
-        cursor.execute("select row_id from addressm")
+        cursor.execute(sql_str)
         row = cursor.fetchall()
     return row
 
@@ -32,3 +43,28 @@ def register(request):
 
 def user_page(request):
     return render(request, 'mainApp/user_page.html')
+
+
+def simple_sql():
+    sql_str = """
+    SELECT
+        COUNT(*) AS cnt,
+        incident_day_of_week
+    FROM
+        main
+    GROUP BY
+        incident_day_of_week
+    ORDER BY
+        cnt DESC"""
+
+    with connection.cursor() as cursor:
+        cursor.execute(sql_str)
+        row = cursor.fetchall()
+    return row
+
+
+def simple(request):
+    row_id = simple_sql()
+    print(row_id)
+    row_id_dict = {'row_id': row_id}
+    return render(request, 'mainApp/simple.html', context=row_id_dict)
