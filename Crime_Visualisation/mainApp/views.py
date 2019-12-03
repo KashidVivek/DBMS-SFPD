@@ -57,6 +57,18 @@ def simple(request):
     # --1.	Determine the day of week when most crime happen.
     sql_str = """
     SELECT
+        COUNT(row_id)
+    FROM
+        main
+    """
+    result = exec_sql(sql_str)
+    print(result)
+    result_t['r0'] = result
+
+
+    # --1.	Determine the day of week when most crime happen.
+    sql_str = """
+    SELECT
         COUNT(*) AS cnt,
         incident_day_of_week
     FROM
@@ -67,7 +79,6 @@ def simple(request):
         cnt DESC"""
     result = exec_sql(sql_str)
     print(result)
-    result_t['row_id'] = result
     result_t['r1'] = result
 
     # --2.	Find the most committed crime.

@@ -197,5 +197,14 @@
     </ol>
 {% endif %}
 
+<h1> 8. Total number of incidents in this database.</h1>
+{% if r0%}
+  <ol>
+    {%for t in r0%}
+      <l1>{{t.0}}</l1><br/>
+    {%endfor%}
+  </ol>
+{%endif%}
+
 </body>
 </html>
