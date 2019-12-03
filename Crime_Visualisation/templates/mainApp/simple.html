@@ -113,18 +113,21 @@
     <ol>
         <table>
             <tr>
-                <th>AREA WITH HIGHEST CRIME COUNT</th>
+                <th>HIGH CRIME AREA</th>
                 <th>COUNT</th>
+                <th>MAP LABEL</th>
             </tr>
             {% for t in r3 %}
                 <tr>
                     <td>{{ t.1 }}</td>
                     <td>{{ t.0 }}</td>
+                    <td>{{ t.2 }}</td>
                 </tr>
             {% endfor %}
 
         </table>
     </ol>
+    <ol><img src="{{ r3_map }}"/></ol>
 {% endif %}
 
 
@@ -142,18 +145,21 @@
     <ol>
         <table>
             <tr>
-                <th>AREA WITH LOWEST CRIME COUNT</th>
+                <th>LOW CRIME AREA</th>
                 <th>COUNT</th>
+                <th>MAP LABEL</th>
             </tr>
             {% for t in r5 %}
                 <tr>
                     <td>{{ t.1 }}</td>
                     <td>{{ t.0 }}</td>
+                    <td>{{ t.2 }}</td>
                 </tr>
             {% endfor %}
 
         </table>
     </ol>
+    <ol><img src="{{ r5_map }}"/></ol>
 {% endif %}
 
 <h1> 6. Find the most committed crime in every district of San Francisco.</h1>
@@ -162,8 +168,8 @@
         <table>
             <tr>
                 <th>DISTRICT</th>
-                <th>MOST COMMITTED CRIME TYPE</th>
-                <th>CRIME COUNT</th>
+                <th>MAJOR CRIME TYPE</th>
+                <th>COUNT</th>
             </tr>
             {% for t in r8 %}
                 <tr>
@@ -198,13 +204,19 @@
 {% endif %}
 
 <h1> 8. Total number of incidents in this database.</h1>
-{% if r0%}
-  <ol>
-    {%for t in r0%}
-      <l1>{{t.0}}</l1><br/>
-    {%endfor%}
-  </ol>
-{%endif%}
+{% if r0 %}
+    <ol>
+        <table>
+            <tr>
+                <th>
+                    {% for t in r0 %}
+                        {{ t.0 }}
+                    {% endfor %}
+                </th>
+            </tr>
+        </table>
+    </ol>
+{% endif %}
 
 </body>
 </html>
