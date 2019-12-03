@@ -95,6 +95,7 @@ ORDER BY
 
     # --3.	Find a particular area of city where most of the crime happen.
     sql_str = """
+    SELECT * FROM (
 SELECT
     COUNT(*) AS cnt,
     c.analysis_neighborhood AS an
@@ -109,7 +110,9 @@ WHERE
 GROUP BY
     c.analysis_neighborhood
 ORDER BY
-    cnt DESC"""
+    cnt DESC
+    ) WHERE rownum <= 10
+    """
     result = exec_sql(sql_str)
     print(result)
     result_t['r3'] = result
@@ -128,7 +131,7 @@ WHERE
     print(result)
     result_t['r4'] = result
 
-#--5.	Determine the safest area of the city.
+    # --5.	Determine the safest area of the city.
     sql_str = """SELECT * FROM (
         SELECT
             COUNT(*) AS cnt,
@@ -151,14 +154,13 @@ WHERE
     print(result)
     result_t['r5'] = result
 
-#--6.	Determine the time and a particular area where there is maximum probability of crime scene.
-#-- not doing this, no time, we could change it to date?
+    # --6.	Determine the time and a particular area where there is maximum probability of crime scene.
+    # -- not doing this, no time, we could change it to date?
 
+    # --7.	Find if reporting the crime online as soon as crime is committed can help resolve the issues faster.
+    # -- RC change this to a trend
 
-#--7.	Find if reporting the crime online as soon as crime is committed can help resolve the issues faster.
-#-- RC change this to a trend
-
-#--8.	Find the most committed crime in every district of San Francisco.
+    # --8.	Find the most committed crime in every district of San Francisco.
     sql_str = """SELECT * FROM (
         SELECT
             COUNT(*) AS cnt,
@@ -182,7 +184,7 @@ WHERE
     print(result)
     result_t['r8'] = result
 
-#--9.	Find the type of crime which is hardest to resolve.
+    # --9.	Find the type of crime which is hardest to resolve.
     sql_str = """SELECT * FROM (
         SELECT
             COUNT(*) as cnt,

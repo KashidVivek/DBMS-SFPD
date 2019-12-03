@@ -1,114 +1,201 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-.topnav a.active {
-  background-color: rgb(5, 16, 87);
-  color: white;
-}
-.topnav-right {
-  float: right;
-}
-</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: rgb(5, 16, 87);
+            color: white;
+        }
+
+        .topnav-right {
+            float: right;
+        }
+
+
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            table-layout: fixed;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2
+        }
+
+        th {
+            background-color: #333;
+            color: white;
+        }
+    </style>
 </head>
 <body>
 
 <div class="topnav">
-  <a class="active" href="#home">Crime Evaluation</a>
-  <a href="#">View Reports</a>
-  <a href="#">View Incidents</a>
-  <a href="#">Trends</a>
-  <div class="topnav-right">
-    <a href="#">Update Profile</a>
-    <a href="#">Logout</a>
-  </div>
+    <a class="active" href="#home">Crime Evaluation</a>
+    <a href="#">View Reports</a>
+    <a href="#">View Incidents</a>
+    <a href="#">Trends</a>
+    <div class="topnav-right">
+        <a href="#">Update Profile</a>
+        <a href="#">Logout</a>
+    </div>
 </div>
 
-<h1> 1.	Determine the day of week when most crime happen.</h1>
-{% if r1%}
-  <ol>
-    {%for t in r1%}
-      <l1>{{t.0}}: {{t.1}}</l1><br/>
-    {%endfor%}
-  </ol>
-{%endif%}
+<h1> 1. Determine the day of week when most crime happen.</h1>
+{% if r1 %}
+    <ol>
+        <table>
+            <tr>
+                <th>DAY OF WEEK</th>
+                <th>CRIME COUNT</th>
+            </tr>
+            {% for t in r1 %}
+                <tr>
+                    <td>{{ t.1 }}</td>
+                    <td>{{ t.0 }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </ol>
+{% endif %}
 
-<h1> 2.	Find the most committed crime.</h1>
-{% if r2%}
-  <ol>
-    {%for t in r2%}
-      <l1>{{t.0}} : {{t.1}} : {{t.2}} </l1><br/>
-    {%endfor%}
-  </ol>
-{%endif%}
+<h1> 2. Find the most committed crime.</h1>
+{% if r2 %}
+    <ol>
+        <table>
+            <tr>
+                <th>CRIME TYPE</th>
+                <th>CRIME COUNT</th>
+            </tr>
+            {% for t in r2 %}
+                <tr>
+                    <td>{{ t.2 }}</td>
+                    <td>{{ t.0 }}</td>
+                </tr>
+            {% endfor %}
 
-<h1> 3.	Find a particular area of city where most of the crime happen.</h1>
-{% if r3%}
-  <ol>
-    {%for t in r3%}
-      <l1>{{t.0}}: {{t.1}}</l1><br/>
-    {%endfor%}
-  </ol>
-{%endif%}
+        </table>
+    </ol>
+{% endif %}
 
+<h1> 3. Find a particular area of city where most of the crime happen.</h1>
+{% if r3 %}
+    <ol>
+        <table>
+            <tr>
+                <th>AREA WITH HIGHEST CRIME COUNT</th>
+                <th>COUNT</th>
+            </tr>
+            {% for t in r3 %}
+                <tr>
+                    <td>{{ t.1 }}</td>
+                    <td>{{ t.0 }}</td>
+                </tr>
+            {% endfor %}
 
-<h1> 4.	Determine the number of cases resolved in San Francisco.</h1>
-{% if r4%}
-  <ol>
-    {%for t in r4%}
-      <l1>{{t.0}}: {{t.1}}</l1><br/>
-    {%endfor%}
-  </ol>
-{%endif%}
-
-<h1> 5.	Determine the safest area of the city.</h1>
-{% if r5%}
-  <ol>
-    {%for t in r5%}
-      <l1>{{t.0}}: {{t.1}}</l1><br/>
-    {%endfor%}
-  </ol>
-{%endif%}
-
-<h1> 8.	Find the most committed crime in every district of San Francisco.</h1>
-{% if r8%}
-  <ol>
-    {%for t in r8%}
-      <l1>{{t.0}} : {{t.1}} : {{t.2}} </l1><br/>
-    {%endfor%}
-  </ol>
-{%endif%}
+        </table>
+    </ol>
+{% endif %}
 
 
-<h1> 9.	Find the type of crime which is hardest to resolve. </h1>
-{% if r9%}
-  <ol>
-    {%for t in r9%}
-      <l1>{{t.0}}: {{t.1}}</l1><br/>
-    {%endfor%}
-  </ol>
-{%endif%}
+<h1> 4. Determine the number of cases resolved in San Francisco.</h1>
+{% if r4 %}
+    <ol>
+        {% for t in r4 %}
+            <l1>Total number of cases resolved: {{ t.0 }}</l1><br/>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h1> 5. Determine the safest area of the city.</h1>
+{% if r5 %}
+    <ol>
+        <table>
+            <tr>
+                <th>AREA WITH LOWEST CRIME COUNT</th>
+                <th>COUNT</th>
+            </tr>
+            {% for t in r5 %}
+                <tr>
+                    <td>{{ t.1 }}</td>
+                    <td>{{ t.0 }}</td>
+                </tr>
+            {% endfor %}
+
+        </table>
+    </ol>
+{% endif %}
+
+<h1> 6. Find the most committed crime in every district of San Francisco.</h1>
+{% if r8 %}
+    <ol>
+        <table>
+            <tr>
+                <th>DISTRICT</th>
+                <th>MOST COMMITTED CRIME TYPE</th>
+                <th>CRIME COUNT</th>
+            </tr>
+            {% for t in r8 %}
+                <tr>
+                    <td>{{ t.2 }}</td>
+                    <td>{{ t.1 }}</td>
+                    <td>{{ t.0 }}</td>
+                </tr>
+            {% endfor %}
+
+        </table>
+    </ol>
+{% endif %}
+
+
+<h1> 7. Find the type of crime which is hardest to resolve. </h1>
+{% if r9 %}
+    <ol>
+        <table>
+            <tr>
+                <th>CRIME TYPE</th>
+                <th>UNRESOLVED COUNT</th>
+            </tr>
+            {% for t in r9 %}
+                <tr>
+                    <td>{{ t.0 }}</td>
+                    <td>{{ t.1 }}</td>
+                </tr>
+            {% endfor %}
+
+        </table>
+    </ol>
+{% endif %}
 
 </body>
 </html>
